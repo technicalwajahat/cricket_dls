@@ -1,5 +1,6 @@
 import 'package:cricket_dls/preferences/theme_preferences.dart';
 import 'package:cricket_dls/routes/approutes.dart';
+import 'package:cricket_dls/views/format_of_match.dart';
 import 'package:cricket_dls/views/userDashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
             theme: notifier.darkTheme ? dark : light,
             darkTheme: notifier.darkTheme ? dark : light,
             getPages: appRoutes(),
-            home: const UserDashboard(),
+            home: const FormatOfMatch(),
             builder: (context, child) {
               return MediaQuery(
                 data: MediaQuery.of(context)
