@@ -1,11 +1,10 @@
 import 'package:cricket_dls/preferences/theme_preferences.dart';
 import 'package:cricket_dls/routes/approutes.dart';
 import 'package:cricket_dls/views/format_of_match.dart';
-import 'package:cricket_dls/views/userDashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
