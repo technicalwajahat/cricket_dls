@@ -18,7 +18,7 @@ class _FormatOfMatchState extends State<FormatOfMatch> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Cricket DLS",
+          "Match Format",
           style: TextStyle(fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
@@ -33,36 +33,20 @@ class _FormatOfMatchState extends State<FormatOfMatch> {
               const Text("Format of Match",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
               SizedBox(height: Get.height * 0.03),
-              DropdownButtonFormField<String>(
-                autofocus: false,
-                value: cricketDls.format.value,
-                isExpanded: true,
-                onChanged: cricketDls.onChangedFormat,
-                items: <String>[
-                  'Select Format of Match',
-                  'One Day International (ODI)',
-                  'T20 International (T20I)',
-                ].map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                validator: (value) {
-                  if (value == "Select Format of Match") {
-                    return ("Please Choose a Format");
-                  }
-                  return null;
-                },
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.fromLTRB(20, 15, 0, 15),
-                  hintText: "Format",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-              SizedBox(height: Get.height * 0.02),
+              Obx(() => DropdownButtonFormField<String>(
+                    icon: const Icon(Icons.arrow_drop_down),
+                    value: cricketDls.format.value,
+                    items: cricketDls.formatList.map((String item) {
+                      return DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(item),
+                      );
+                    }).toList(),
+                    onChanged: (item) {
+                      cricketDls.format.value = item!;
+                    },
+                  )),
+              SizedBox(height: Get.height * 0.03),
               FilledButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
