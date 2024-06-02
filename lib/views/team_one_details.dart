@@ -55,7 +55,6 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
                 TextFormField(
                   autofocus: false,
                   enabled: true,
-
                   keyboardType: TextInputType.number,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   textInputAction: TextInputAction.done,
