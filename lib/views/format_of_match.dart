@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../utils/utils.dart';
 import '../viewModel/cricket_dls_viewmodel.dart';
 
 class FormatOfMatch extends StatefulWidget {
@@ -42,8 +43,22 @@ class _FormatOfMatchState extends State<FormatOfMatch> {
                         child: Text(item),
                       );
                     }).toList(),
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                    ),
+                    validator: (value) {
+                      if (value == "Choose Format") {
+                        return "Please select a match format";
+                      }
+                      return null;
+                    },
                     onChanged: (item) {
                       cricketDls.format.value = item!;
+                      if (item == "ODI") {
+                        cricketDls.totalOvers.text = "50";
+                      } else if (item == "T20") {
+                        cricketDls.totalOvers.text = "20";
+                      }
                     },
                   )),
               SizedBox(height: Get.height * 0.03),
@@ -55,7 +70,11 @@ class _FormatOfMatchState extends State<FormatOfMatch> {
                   ),
                 ),
                 onPressed: () {
-                  Get.toNamed("/teamOne");
+                  if (cricketDls.format.value != "Choose Format") {
+                    Get.toNamed("/teamOne");
+                  } else {
+                    Utils.snackBar("Please Choose Format", context);
+                  }
                 },
                 child: const Text(
                   "Next",
