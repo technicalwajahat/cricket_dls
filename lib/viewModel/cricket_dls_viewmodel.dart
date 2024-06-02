@@ -4,8 +4,13 @@ import 'package:get/get.dart';
 class CricketDlsViewModel extends GetxController {
   var format = 'Choose Format'.obs;
   var totalWickets = 10.obs;
-  var finalResult = 0.0.obs;
+  var finalResult = 0.obs;
+
+  double overLeft = 0.0;
+  double teamTwoScore = 0.0;
+
   final totalOvers = TextEditingController();
+  final suspensionOvers = TextEditingController();
   final targetScore = TextEditingController();
   final currentScore = TextEditingController();
   final currentOvers = TextEditingController();
@@ -28,7 +33,15 @@ class CricketDlsViewModel extends GetxController {
 
     final double targetScoreValue = double.parse(targetScore.text);
 
-    finalResult.value =
-        (targetScoreValue * resourcesUsedByTeam2) / resourcesAvailableToTeam1;
+    finalResult.value = ((targetScoreValue * resourcesUsedByTeam2) /
+        resourcesAvailableToTeam1) as int;
+  }
+
+  void calculateTargetScore() {
+    overLeft =
+        double.parse(totalOvers.text) - double.parse(suspensionOvers.text);
+    teamTwoScore = double.parse(targetScore.text) *
+        (overLeft / double.parse(totalOvers.text));
+    finalResult.value = teamTwoScore.round().toInt();
   }
 }

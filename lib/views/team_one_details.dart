@@ -55,6 +55,7 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
                 TextFormField(
                   autofocus: false,
                   enabled: true,
+
                   keyboardType: TextInputType.number,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   textInputAction: TextInputAction.done,
@@ -79,6 +80,7 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                     hintText: "Score",
+                    labelText: 'Score',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -94,7 +96,7 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
                   ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Get.toNamed("/teamTwo");
+                      Get.toNamed("/suspension");
                     }
                   },
                   child: const Text(

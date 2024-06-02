@@ -44,6 +44,7 @@ class _FormatOfMatchState extends State<FormatOfMatch> {
                       );
                     }).toList(),
                     decoration: const InputDecoration(
+                      labelText: "Match Format",
                       border: OutlineInputBorder(),
                     ),
                     validator: (value) {

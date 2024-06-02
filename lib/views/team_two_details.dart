@@ -99,6 +99,7 @@ class _DetailsTeamTwoState extends State<DetailsTeamTwo> {
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                     hintText: "Current Over",
+                    labelText: "Current Over",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -134,6 +135,7 @@ class _DetailsTeamTwoState extends State<DetailsTeamTwo> {
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                     hintText: "Wicket Lost",
+                    labelText: "Wicket Lost",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

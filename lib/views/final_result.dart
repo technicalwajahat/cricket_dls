@@ -16,7 +16,7 @@ class _FinalResultState extends State<FinalResult> {
   @override
   void initState() {
     super.initState();
-    cricketDls.calculateResult();
+    cricketDls.calculateTargetScore();
   }
 
   @override
@@ -30,14 +30,24 @@ class _FinalResultState extends State<FinalResult> {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("${cricketDls.finalResult.value}",
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w700))
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text("Final Result",
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+              SizedBox(height: Get.height * 0.03),
+              Text(
+                "Team 2 needs ${cricketDls.finalResult.value} runs in ${cricketDls.overLeft} overs to win",
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
