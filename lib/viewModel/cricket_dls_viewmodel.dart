@@ -18,6 +18,27 @@ class CricketDlsViewModel extends GetxController {
 
   var formatList = <String>['Choose Format', 'ODI', 'T20'].obs;
 
+  var screen1Values = List.generate(11, (_) => List.filled(3, '')).obs;
+  var screen2Values = List.generate(6, (_) => List.filled(3, '')).obs;
+
+  void updateValue(
+      int screenIndex, int rowIndex, int fieldIndex, String value) {
+    if (screenIndex == 1) {
+      screen1Values[rowIndex][fieldIndex] = value;
+    } else if (screenIndex == 2) {
+      screen2Values[rowIndex][fieldIndex] = value;
+    }
+  }
+
+  String getValue(int screenIndex, int rowIndex, int fieldIndex) {
+    if (screenIndex == 1) {
+      return screen1Values[rowIndex][fieldIndex];
+    } else if (screenIndex == 2) {
+      return screen2Values[rowIndex][fieldIndex];
+    }
+    return '';
+  }
+
   void onChangedFormat(String? value) {
     if (value != null) {
       format.value = value;

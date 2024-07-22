@@ -20,7 +20,7 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Team 1",
+          "Team A",
           style: TextStyle(fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
@@ -34,9 +34,9 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text("Details for Team 1",
+                const Text("Team A Score",
                     style:
-                        TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 SizedBox(height: Get.height * 0.03),
                 TextFormField(
                   autofocus: false,
@@ -64,11 +64,11 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
                   ],
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Please Enter Score";
+                      return "Please Enter Target";
                     }
                     if (int.tryParse(value) != null &&
-                        int.parse(value) >= 500) {
-                      return "Score must be less than 550";
+                        int.parse(value) >= 450) {
+                      return "Score must be less than 450";
                     }
                     return null;
                   },
@@ -78,8 +78,7 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
                   controller: cricketDls.targetScore,
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                    hintText: "Score",
-                    labelText: 'Score',
+                    labelText: 'Target',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -95,7 +94,7 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
                   ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Get.toNamed("/suspension");
+                      Get.toNamed("/teamOnePlayer");
                     }
                   },
                   child: const Text(

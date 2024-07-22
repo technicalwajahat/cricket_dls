@@ -25,7 +25,7 @@ class _FinalResultState extends State<FinalResult> {
       appBar: AppBar(
         title: const Text(
           "Final Result",
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
       ),

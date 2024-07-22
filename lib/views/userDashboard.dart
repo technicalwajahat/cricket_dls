@@ -18,7 +18,7 @@ class _UserDashboardState extends State<UserDashboard> {
       appBar: AppBar(
         title: const Text(
           "Cricket DLS",
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
         actions: [

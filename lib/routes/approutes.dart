@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../views/final_result.dart';
-import '../views/suspension.dart';
-import '../views/team_two_details.dart';
+import '../views/team_one_players.dart';
+import '../views/team_two_players.dart';
 import '../views/userDashboard.dart';
 
 appRoutes() => [
@@ -28,14 +28,14 @@ appRoutes() => [
         transitionDuration: Durations.extralong2,
       ),
       GetPage(
-        name: '/teamTwo',
-        page: () => const DetailsTeamTwo(),
+        name: '/teamTwoPlayer',
+        page: () => const TeamTwoPlayers(),
         transition: Transition.rightToLeft,
         transitionDuration: Durations.extralong2,
       ),
       GetPage(
-        name: '/suspension',
-        page: () => const Suspension(),
+        name: '/teamOnePlayer',
+        page: () => const TeamOnePlayers(),
         transition: Transition.rightToLeft,
         transitionDuration: Durations.extralong2,
       ),

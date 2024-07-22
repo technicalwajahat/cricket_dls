@@ -20,7 +20,7 @@ class _FormatOfMatchState extends State<FormatOfMatch> {
       appBar: AppBar(
         title: const Text(
           "Match Format",
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
       ),
@@ -32,7 +32,7 @@ class _FormatOfMatchState extends State<FormatOfMatch> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text("Format of Match",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(height: Get.height * 0.03),
               Obx(() => DropdownButtonFormField<String>(
                     icon: const Icon(Icons.arrow_drop_down),
