@@ -67,8 +67,8 @@ class _DetailsTeamOneState extends State<DetailsTeamOne> {
                       return "Please Enter Target";
                     }
                     if (int.tryParse(value) != null &&
-                        int.parse(value) >= 450) {
-                      return "Score must be less than 450";
+                        int.parse(value) >= 550) {
+                      return "Score must be less than 550";
                     }
                     return null;
                   },

@@ -58,7 +58,7 @@ class _TeamTwoPlayersState extends State<TeamTwoPlayers> {
                   Get.toNamed("/finalResult");
                 },
                 child: const Text(
-                  "Next",
+                  "Calculate Final Result",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                 ),
