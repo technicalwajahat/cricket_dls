@@ -37,7 +37,11 @@ class _TeamOnePlayersState extends State<TeamOnePlayers> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: ThreeFieldRow(screenIndex: 1, rowIndex: index, name: 'Batting',),
+                      child: ThreeFieldRow(
+                        screenIndex: 1,
+                        rowIndex: index,
+                        name: 'Batting',
+                      ),
                     );
                   },
                 ),
